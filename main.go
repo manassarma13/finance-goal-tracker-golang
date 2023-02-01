@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	depositMoney := 0.0
+	monthlyInstallments := 0.0
 	goalAmount := 0.0
 	goalAge := 0
 	currentAge := 0
@@ -31,8 +31,8 @@ func main() {
 	months := (goalAge - currentAge) * 12
 	amountNeeded := goalAmount - currentNetWorth
 
-	depositMoney = amountNeeded / float64(months)
-	depositMoney = depositMoney / math.Pow((1+(appreciationValuePercentage/100)), float64(months/12))
+	monthlyInstallments = amountNeeded / float64(months)
+	monthlyInstallments = monthlyInstallments / math.Pow((1+(appreciationValuePercentage/100)), float64(months/12))
 
-	fmt.Printf("Monthly deposit amount: %.2f", depositMoney)
+	fmt.Printf("Monthly deposit amount: %.2f", monthlyInstallments)
 }
